@@ -41,7 +41,22 @@ app.post('/api/students', (req, res) => {
    try {
     asdfjkl()
    } catch {
-    rollbar.critical('caught a backend failure')
+    rollbar.error('caught a backend failure')
+   }
+
+
+
+   try {
+    asdfjkl()
+   } catch {
+    rollbar.critical('caught a backend critical failure')
+   }
+
+
+   try {
+    asdfjkl()
+   } catch {
+    rollbar.info('an unimportant function broke')
    }
 
    try {
